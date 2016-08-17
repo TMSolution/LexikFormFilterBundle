@@ -19,6 +19,7 @@ final class FilterOperands
     const STRING_ENDS     = 2;
     const STRING_EQUALS   = 3;
     const STRING_CONTAINS = 4;
+    const STRING_CONTAINS_ALL_WORDS = 5;
 
     /**
      * @deprecated use FilterOperands::STRING_CONTAINS
@@ -63,6 +64,7 @@ final class FilterOperands
             self::STRING_ENDS,
             self::STRING_EQUALS,
             self::STRING_CONTAINS,
+            self::STRING_CONTAINS_ALL_WORDS
         );
 
         if ($includeSelector) {
