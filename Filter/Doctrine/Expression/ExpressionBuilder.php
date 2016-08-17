@@ -229,6 +229,7 @@ abstract class ExpressionBuilder
             $value = $this->encoding ? mb_strtolower($value, $this->encoding) : mb_strtolower($value);
         }
 
+
         switch ($type) {
             case FilterOperands::STRING_STARTS:
                 $value .= '%';
@@ -240,6 +241,10 @@ abstract class ExpressionBuilder
 
             case FilterOperands::STRING_CONTAINS:
                 $value = '%' . $value . '%';
+                break;
+            
+            case FilterOperands::STRING_CONTAINS_ALL_WORDS:
+                $value = '%' . str_replace(' ', '%', $value) . '%';
                 break;
 
             case FilterOperands::STRING_EQUALS:
